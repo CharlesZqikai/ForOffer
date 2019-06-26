@@ -12,4 +12,4 @@ project description    : 每天两道题 1.(Android java) 2.算法 algorithm
  Base      : 请解释Handler 机制(tip : Handler looper message 之间关系,如何关联到一起的,postdelaymessage 如何入队的,
                            消息队列是什么样的(阻塞 or 非阻塞),使用场景注意事项 等请把你知道的一切用文字描述出来)
                           
-algorithm : 二分查找 数据集合[10,18,22,38,49,58,61,70]  中查找16、61
+algorithm : 二分查找 数据集合{10,18,22,38,49,58,61,70}  中查找16、61
