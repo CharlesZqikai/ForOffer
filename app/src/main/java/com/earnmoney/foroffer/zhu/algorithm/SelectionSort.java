@@ -29,7 +29,7 @@ public class SelectionSort {
         }
     }
 
-    private static void selectionSort(int[] arr){
+    public static void selectionSort(int[] arr){
         for (int i=0,len = arr.length-1;i < len;i++){
             for (int j=i;j<=len;j++){
                 if (arr[i]<arr[j]){
