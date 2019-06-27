@@ -19,6 +19,7 @@ public class BinarySearchAlgorithm {
         System.out.println(3 / 2);
         float a = 1.8f;
         System.out.println((int) a);
+        System.out.println(System.currentTimeMillis());
         System.out.println("===================================");
         System.out.println(recursion(arr, 9, low, high));
         System.out.println(recursion(arr, 6, low, high));

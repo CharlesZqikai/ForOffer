@@ -15,7 +15,12 @@ public class HandlerPart {
             @Override
             public void run() {
                 Looper.prepare();
-                Handler handler = new Handler();
+                Handler handler = new Handler(){
+                    @Override
+                    public void handleMessage(Message msg) {
+                        super.handleMessage(msg);
+                    }
+                };
                 Looper.loop();
                 Message obtain = Message.obtain();
                 obtain.obj = "123";

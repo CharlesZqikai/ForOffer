@@ -7,17 +7,16 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="measure"/>
 
     <TextView
-        android:id="@+id/tv_hello"
-        android:text="hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/btn_measure"
+        android:id="@+id/tv_measure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="tu measure on create" />
+        android:text="Hello Worldsdf dfa dfa dfad fadf adf a dfaadf af \n sdf sdf !" />
 
 </LinearLayout>
