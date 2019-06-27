@@ -16,20 +16,20 @@ package com.earnmoney.foroffer.zhu.algorithm;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {38,10,22,49,61,18,70,58,6,20,90};
-
-        for (int i:arr) {
-            System.out.print(i);
-            System.out.print(",");
-        }
+        printArr(arr);
         selectionSort(arr);
+        printArr(arr);
+    }
+
+    private static void printArr(int[] arr) {
         System.out.println(" ");
-        for (int i:arr) {
+        for (int i : arr) {
             System.out.print(i);
             System.out.print(",");
         }
     }
 
-    public static void selectionSort(int[] arr){
+    private static void selectionSort(int[] arr){
         for (int i=0,len = arr.length-1;i < len;i++){
             for (int j=i;j<=len;j++){
                 if (arr[i]<arr[j]){
