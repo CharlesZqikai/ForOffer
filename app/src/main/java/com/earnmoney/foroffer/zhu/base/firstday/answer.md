@@ -3,7 +3,7 @@
                        
 Handler机制是android最核心的通讯机制,主要用来提供workThread与UIThread的间的通讯.
 
-Hanlder:用来将message放到MessageQueue中以及,接收looper去出的message
+Hander:用来将message放到MessageQueue中以及,接收looper去出的message
 Looper:每个线程只有一个,通过TheadLocal保证,UI线程默认创建了looper,子线程需要用looper.prepare()创建,用于循环从MessageQueue中取message.
 MessageQueue:消息队列,先进先出,阻塞队列    
 
