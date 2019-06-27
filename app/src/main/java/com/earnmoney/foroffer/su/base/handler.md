@@ -121,7 +121,7 @@ ActivityThread.main 方法源码如下：
     }
 ```
 
-综上，Handler 的构造方法就是初始化 Looper，并通过 Looper 关联 MessageQueue 对象。
+综上，Handler 的构造方法就是从ThreadLocal中获取Looper，并通过 Looper 关联 MessageQueue 对象。
 
 熟悉了 Handler 的构造方法，然后就是 Handler 的发送消息的各种方法，发生消息可以分为两种：
 
