@@ -16,9 +16,15 @@ package com.earnmoney.foroffer.zhu.algorithm;
 public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {38,10,22,49,61,18,70,58,6,20,90};
-        printArr(arr);
-        selectionSort(arr);
-        printArr(arr);
+//        printArr(arr);
+//        selectionSort(arr);
+//        printArr(arr);
+        int i=0,len = arr.length-1;
+        for (;i < len; i++){
+            System.out.println("循环中:"+i);
+        }
+
+        System.out.println("循环后:"+i);
     }
 
     private static void printArr(int[] arr) {
@@ -30,8 +36,9 @@ public class SelectionSort {
     }
 
     private static void selectionSort(int[] arr){
+        //此处for循环需要注意,先循环后执行i++,循环结束最后一次i++不执行.
         for (int i=0,len = arr.length-1;i < len;i++){
-            for (int j=i;j<=len;j++){
+            for (int j=i+1;j<=len;j++){
                 if (arr[i]<arr[j]){
                     int temp = arr[i];
                     arr[i] = arr[j];
