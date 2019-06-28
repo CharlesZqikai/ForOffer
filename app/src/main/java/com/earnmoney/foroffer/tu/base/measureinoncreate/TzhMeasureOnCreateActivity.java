@@ -1,6 +1,7 @@
 package com.earnmoney.foroffer.tu.base.measureinoncreate;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
@@ -52,6 +53,15 @@ public class TzhMeasureOnCreateActivity extends FragmentActivity {
                 Log.e(TAG, "onClick :   " + mtvMeasure.getMeasuredWidth() + "==" + mtvMeasure.getMeasuredHeight());// 912 106
             }
         });
+
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                Log.e(TAG, " Handler post :   " + mtvMeasure.getWidth() + "==" + mtvMeasure.getHeight());
+                Log.e(TAG, "Handler post :   " + mtvMeasure.getMeasuredWidth() + "==" + mtvMeasure.getMeasuredHeight());
+            }
+        });
+
         mtvMeasure = findViewById(R.id.tv_measure);
         Log.e(TAG, mtvMeasure.getWidth() + "==" + mtvMeasure.getHeight()); // 0,0
         Log.e(TAG, mtvMeasure.getMeasuredWidth() + "==" + mtvMeasure.getMeasuredHeight());// 0, 0
@@ -91,6 +101,7 @@ public class TzhMeasureOnCreateActivity extends FragmentActivity {
                 Log.e(TAG, "getViewTreeObserver :   " + mtvMeasure.getMeasuredWidth() + "==" + mtvMeasure.getMeasuredHeight()); // 912  106
             }
         });
+
     }
 
     @Override
