@@ -90,7 +90,10 @@ view.post(new Runnable() {
         int height = view.getHeight();
     }
 });
-为什么这个函数可以获取宽高值，就需要了解一下View的绘制流程，在onResume之前view.post的时候，会把Runnable添加到一个RunQueue中，在 onResume的时候 DecorView 会被添加到 ViewRoomImpl，之后会向主线程的消息队列发送一个绘制消息 TraversalRunnable，当执行到这个绘制消息的时候就会执行ViewRoomImpl.performTraversals()，ViewRoomImpl.performTraversals()先绘制整个DecorView，然后执行RunQueue中的消息，所以执行 view.post 的消息会在draw流程之后执行。
+为什么这个函数可以获取宽高值，就需要了解一下View的绘制流程，在onResume之前view.post的时候，会把Runnable添加到一个RunQueue中，
+在 onResume的时候 DecorView 会被添加到 ViewRoomImpl，之后会向主线程的消息队列发送一个绘制消息 TraversalRunnable，
+当执行到这个绘制消息的时候就会执行ViewRoomImpl.performTraversals()，
+ViewRoomImpl.performTraversals()先绘制整个DecorView，然后执行RunQueue中的消息，所以执行 view.post 的消息会在draw流程之后执行。
 
 Activity#onWindowFocusChanged() 获取宽高
 当整个DecorView已经绘制完成，Activty已经要显示出来的时候，就会回调Activity#onWindowFocusChanged。
