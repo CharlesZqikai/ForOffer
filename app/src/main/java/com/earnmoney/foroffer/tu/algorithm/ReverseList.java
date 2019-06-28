@@ -14,6 +14,18 @@ package com.earnmoney.foroffer.tu.algorithm;
  * 我们从while 循环的第一次开始分析
  * 需要的变量 : preNode 并且 preNode = null ,在第一次结束的时候preNode = currentNode
  *  好吧上面都写出了 CurrentNode 这也是一个变量
+ *
+ * 第一次 : null<- a   a<- b  如何实现? 利用变量
+ *        preNode = null;
+ *        currentNode = a;
+ *
+ *        tempNode = currentNode.next; tempNode = b;
+ *
+ *        currentNode.next = preNode; // a.next = null;
+ *        preNode = currentNode;     // preNode = a;
+ *        currentNode = b;
+ *
+ *
  */
 public class ReverseList {
 
