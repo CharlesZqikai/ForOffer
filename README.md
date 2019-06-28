@@ -8,13 +8,16 @@ project description    : 每天两道题 1.(Android java) 2.算法 algorithm
 
 出题次序: tu,zhu,su,zhao
 
-2019.06.25 - 06.26
++ 2019.06.25 - 06.26
  Base      : 请解释Handler 机制(tip : Handler looper message 之间关系,如何关联到一起的,postdelaymessage 如何入队的,
                            消息队列是什么样的(阻塞 or 非阻塞),使用场景注意事项 等请把你知道的一切用文字描述出来)
                           
 algorithm : 二分查找 数据集合{10,18,22,38,49,58,61,70}  中查找16、61
 
-2019.06.26 - 06.27
++ 2019.06.26 - 06.27
  Base      : 请写出在onCreate 里获取view宽高的几种方式，以及View.post{}是如何能获得view的宽高的？
  
  algorithm : 选择排序 数据集合{38,10,22,49,61,18,70,58,6,20,90} 
+ + 2019.06.27 - 06.28
+ Base      : Get和Post的区别
+ algorithm : 链表反转
