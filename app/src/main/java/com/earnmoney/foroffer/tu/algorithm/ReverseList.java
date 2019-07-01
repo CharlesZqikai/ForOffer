@@ -43,30 +43,42 @@ public class ReverseList {
         printList(stringNode);
 
 
+
         System.out.println("recursion ================================");
+
         Node<String> a1 = new Node<>("a");
         Node<String> b1 = new Node<>("b");
         Node<String> c1 = new Node<>("c");
         Node<String> d1 = new Node<>("d");
         Node<String> e1 = new Node<>("e");
 
-        a1.next = b1;
-        b1.next = c1;
-        c1.next = d1;
-        d1.next = e1;
+
         printList(recursion(a1));
     }
 
 
-    private static Node<String> recursion(Node<String> headNode) {
-        if (headNode == null || headNode.next == null) {
-            return headNode;
-        }
+//    private static Node<String> recursion(Node<String> headNode) {
+//        if (headNode == null || headNode.next == null) {
+//            return headNode;
+//        }
+//        Node<String> pre = recursion(headNode.next);
+//        headNode.next.next = headNode;
+//        headNode.next = null;
+//        return pre;
+//    }
 
-        Node<String> pre = recursion(headNode.next);
-        headNode.next.next = headNode;
-        headNode.next = null;
-        return pre;
+
+    private static Node recursion(Node head) {
+        if (head == null || head.next == null) {
+           // e
+            return head;
+        }
+        // a->b->c->d->e
+        //
+        Node newNode = recursion(head.next);
+        newNode.next.next = head;
+        newNode.next = null;
+        return newNode;
     }
 
     private static Node<String> reverseListFunc(Node<String> headNode) {
@@ -80,18 +92,18 @@ public class ReverseList {
         // 辅助变量 preNode
         Node preNode = null;
         // 当前node
-        Node currentNode = headNode;
+//        Node currentNode = headNode;
 
         // 当前node 每次 指向nextNode
-        while (currentNode != null) {
+        while (headNode != null) {
             // 记录下当前 Node.next Node 否则会断链(需要将当前node 指向 nextNode)
-            Node tempNode = currentNode.next;
+            Node tempNode = headNode.next;
             // 当前node next 指针指向preNode 第一次为null
-            currentNode.next = preNode;
+            headNode.next = preNode;
             // 然后把当前node 赋值给 preNode  这样就完成了 当前指针后移
-            preNode = currentNode;
+            preNode = headNode;
             // 当前 node 指向下一个指针
-            currentNode = tempNode;
+            headNode = tempNode;
         }
         // 这里想一下为什么要return preNode ? 仔细想好好想
         return preNode;
