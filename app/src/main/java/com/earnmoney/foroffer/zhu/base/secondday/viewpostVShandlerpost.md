@@ -7,6 +7,7 @@
     @Override
     public void handleResumeActivity(IBinder token, boolean finalStateRequest, boolean isForward,
             String reason) {
+    //此时activity的onResume被调用
         final ActivityClientRecord r = performResumeActivity(token, finalStateRequest, reason);
         //省略部分非关键代码
         View decor = r.window.getDecorView();
@@ -37,7 +38,7 @@
 ```
 
 >由上方代码可见onResume执行在view添加到window之前
->代码追踪经WindowManagerImpl.java ->WindowManagerGlobal.java->ViewRootImpl.java
+>wm.addView 代码追踪经WindowManagerImpl.java ->WindowManagerGlobal.java->ViewRootImpl.java
 >关键代码如下
 ```java
         @Override
@@ -70,13 +71,11 @@
         }
         
         performTraversals(){
-//          ...
-//最为关键的代码
+        //最为关键的代码,省略非关键代码,此时给view的mAttachInfo赋值, view.post可以真正插入到消息队列中
           host.dispatchAttachedToWindow(mAttachInfo, 0);
-//          ...
         }
         
-        //转到Choreographer.java
+        //mChoreographer.postCallBack 发送了一个异步的message 代码如下
         public void postCallback(int callbackType, Runnable action, Object token) {
                postCallbackDelayed(callbackType, action, token, 0);
            }
