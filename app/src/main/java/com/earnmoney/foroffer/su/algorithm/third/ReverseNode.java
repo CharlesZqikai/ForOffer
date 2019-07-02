@@ -31,13 +31,19 @@ public class ReverseNode {
     }
 
     public static ListNode reverseNode(ListNode head) {
+        //记录head节点的前面一个节点,第一次为空
         ListNode prev = null;
         while (head != null) {
+            //记录head节点的第二个节点,不然会断链
             ListNode temp = head.next;
+            //head节点的next指向 它的前一个节点,第一次相当于断开head节点与第二个节点的联系,之后相当于逆序
             head.next = prev;
+            //记录当前的head节点,也就是下次循环的head节点的前一个节点
             prev = head;
+            //head节点后移
             head = temp;
         }
+        //prev 肯定是最后一个节点
         return prev;
     }
 
@@ -50,4 +56,5 @@ public class ReverseNode {
         head.next = null;
         return prev;
     }
+
 }
