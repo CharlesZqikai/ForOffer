@@ -70,6 +70,7 @@ public class TzhMeasureOnCreateActivity extends FragmentActivity {
         int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec((1 << 30) - 1, View.MeasureSpec.AT_MOST);
         mtvMeasure.measure(widthMeasureSpec, heightMeasureSpec);
 
+        mtvMeasure.setText("12");
         Log.e(TAG, "measure :   " + mtvMeasure.getWidth() + "==" + mtvMeasure.getHeight()); // 0 , 0
         Log.e(TAG, "measure :   " + mtvMeasure.getMeasuredWidth() + "==" + mtvMeasure.getMeasuredHeight()); // 899  106
 
