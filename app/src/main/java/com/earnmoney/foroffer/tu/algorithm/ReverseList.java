@@ -52,7 +52,6 @@ public class ReverseList {
         Node<String> d1 = new Node<>("d");
         Node<String> e1 = new Node<>("e");
 
-
         printList(recursion(a1));
     }
 
@@ -70,15 +69,20 @@ public class ReverseList {
 
     private static Node recursion(Node head) {
         if (head == null || head.next == null) {
-           // e
+            // e
+            System.out.println("return  start ================================");
+            printList1(head);
+            System.out.println("return  end ================================");
             return head;
         }
-        // a->b->c->d->e
-        //
-        Node newNode = recursion(head.next);
-        newNode.next.next = head;
-        newNode.next = null;
-        return newNode;
+        // a -> b -> c ->d ->e
+        Node pre = recursion(head.next);
+        System.out.println("start ================================");
+        printList1(head);
+        System.out.println("end ================================");
+        head.next.next = head;
+        head.next = null;
+        return pre;
     }
 
     private static Node<String> reverseListFunc(Node<String> headNode) {
