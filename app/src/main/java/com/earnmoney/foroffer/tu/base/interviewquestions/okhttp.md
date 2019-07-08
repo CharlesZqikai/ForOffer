@@ -156,6 +156,7 @@ RealCall.java
            // Build a full stack of interceptors.
            List<Interceptor> interceptors = new ArrayList<>();
            interceptors.addAll(client.interceptors());
+           // 下面几个 inteceptor 已经给排列好顺序 是不是该看一下流程呢?
            interceptors.add(retryAndFollowUpInterceptor);
            interceptors.add(new BridgeInterceptor(client.cookieJar()));
            interceptors.add(new CacheIntercepto r(client.internalCache()));
@@ -245,6 +246,8 @@ RealCall.java
          }
        }
      }   
+     
+       
   
 // 最后一个核心 okio  NIO    https://www.jianshu.com/p/a6b7410a6fbe    此链接只是随手找来的,请自己查找相关资料并了解
  source(input) sink(out)
