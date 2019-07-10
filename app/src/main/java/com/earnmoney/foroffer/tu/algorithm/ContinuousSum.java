@@ -1,7 +1,5 @@
 package com.earnmoney.foroffer.tu.algorithm;
 
-import java.util.ArrayList;
-
 /**
  * create by tuzanhua on 2019/7/10
  * <p>
@@ -16,6 +14,7 @@ public class ContinuousSum {
     public static void main(String[] arg) {
         int[] arr = new int[]{-10, -20, -30, 60, -5, 9, -7};
         System.out.println("sum :" + sum(arr));
+
     }
 
     private static int sum(int[] arr) {
@@ -24,7 +23,7 @@ public class ContinuousSum {
 
         int start = 0, end = 0;//用于存储最大子序列的起点和终点
         int p = 0;//指针，用于遍历数组。
-        
+
         for (int i = 0, len = arr.length - 1; i <= len; i++) {
             if (sum < 0) {
                 sum = arr[i];
@@ -43,4 +42,5 @@ public class ContinuousSum {
         System.out.println("start :" + start + "=== end :" + end);
         return max;
     }
+
 }
