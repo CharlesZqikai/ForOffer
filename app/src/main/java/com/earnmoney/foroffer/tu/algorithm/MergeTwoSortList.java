@@ -50,15 +50,12 @@ public class MergeTwoSortList {
         ListNode curh1 = head1;
         ListNode curh2 = head2;
         newNode = curh1.data <= curh2.data ? curh1 : curh2;
-
        if(curh1.data <= curh2.data){
            curh1 = curh1.nextNode;
        }else {
            curh2 =curh2.nextNode;
        }
-
        ListNode curentNode = newNode;
-
         while (curh1 != null && curh2 != null) {
             if (curh1.data <= curh2.data) {
                 curentNode.nextNode = curh1;
@@ -80,8 +77,18 @@ public class MergeTwoSortList {
         }
         print(newNode);
 
+
         ListNode node = newNode;
-        node.nextNode = null;
+        ListNode node1 = new ListNode();
+        node1.data = 10;
+        node.nextNode = node1;
+        node = node.nextNode;
+
+        ListNode node11 = new ListNode();
+        node11.data = 11;
+        node.nextNode = node11;
+        node = node.nextNode;
+
         System.out.println("============================");
         print(newNode);
 
