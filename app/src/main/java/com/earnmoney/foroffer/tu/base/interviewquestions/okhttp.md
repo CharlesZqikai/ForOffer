@@ -178,8 +178,8 @@ RealCall.java
       // 下面看每一个拦截器的作用以及真正发起请求的拦截器是哪一个   
       
       retryAndFollowUpInterceptor
-      
-       创建   StreamAllocation
+      重试以及重定向
+      创建   StreamAllocation
       
       ConnectInterceptor 
       
