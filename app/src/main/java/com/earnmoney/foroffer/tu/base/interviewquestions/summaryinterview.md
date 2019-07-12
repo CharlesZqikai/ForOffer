@@ -197,5 +197,19 @@ Parcelable方式的实现原理是将一个完整的对象进行分解，而分�
   6)  Parcelable的性能比Serializable好，在内存开销方面较小，所以在内存间数据传输时推荐使用Parcelable，如activity间传输数据，
   而Serializable可将数据持久化方便保存，所以在需要保存或网络传输数据时选择Serializable，因为android不同版本Parcelable可能不同，所以不推荐使用Parcelable进行数据持久化
 
+16.静态内部类的设计意图
 
+17.string 转换成 integer的方式及原理
+ parseInt(String s)--内部调用parseInt(s,10)（默认为10进制）
+ 正常判断null，进制范围，length等
+ 判断第一个字符是否是符号位
+ 循环遍历确定每个字符的十进制值
+ 通过*= 和-= 进行计算拼接
+ 判断是否为负值 返回结果
  
+ 
+ java 进阶
+ 
+ 1.哪些情况下的对象会被垃圾回收机制处理掉？
+ ???
+ 2.utf-8编码中的中文占几个字节；int型几个字节？
