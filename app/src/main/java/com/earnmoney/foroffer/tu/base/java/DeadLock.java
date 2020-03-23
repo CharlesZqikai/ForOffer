@@ -12,6 +12,7 @@ public class DeadLock {
     }
 
     private static void deadLockSimple() {
+        System.out.println(System.currentTimeMillis());
         final String lockA = "A";
         final String lockB = "B";
 
