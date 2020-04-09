@@ -10,7 +10,7 @@
     @Override
        public void requestLayout() {
            if (!mHandlingLayoutInLayoutRequest) {
-               checkThread();  // 检查线程抛出异常
+               checkThread();  // 检查线程抛出异常ccccv
                mLayoutRequested = true;
                scheduleTraversals();
            }
